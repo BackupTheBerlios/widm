@@ -2,6 +2,8 @@
    where they should be (well, arguably), like in TfrmAntwoord
  * Option to show the number of right questions
  * Added option to set number of people to execute (not functional though)
+ * Made Login dialog more like the TV program (i.e., adjusted captions and
+   removed cancel button)
 
 2.0b1-berlios
  * Sta niet meer toe dat twee deelnemers dezelfde naam hebben (veroorzaakt

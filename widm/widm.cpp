@@ -14,6 +14,7 @@ USEFORM("FfrmTesttest.cpp", frmTesttest);
 USEUNIT("exitorder.cpp");
 USEFORM("FfrmExecutie.cpp", frmExecutie);
 USE("TODO.txt", File);
+USE("ChangeLog.txt", File);
 //---------------------------------------------------------------------------
 WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {

@@ -16,15 +16,18 @@ __fastcall TfrmTestLogin::TfrmTestLogin(TComponent* Owner, TfrmTestwin *par)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TfrmTestLogin::Button2Click(TObject *Sender)
-{
-  Close();
-  parent->LoginCloseCallback();
-}
-//---------------------------------------------------------------------------
 void __fastcall TfrmTestLogin::Button1Click(TObject *Sender)
 {
   parent->LoginCallback(txtName->Text);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TfrmTestLogin::FormClose(TObject *Sender,
+      TCloseAction &Action)
+{
+  Close();
+  parent->LoginCloseCallback();
+
 }
 //---------------------------------------------------------------------------
 

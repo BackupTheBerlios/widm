@@ -36,6 +36,7 @@ __published:	// IDE-managed Components
         TLabel *Label1;
         TEdit *txtAantal;
         TButton *cmdPercentage;
+        TGroupBox *GroupBox1;
         void __fastcall lstUitslagClick(TObject *Sender);
         void __fastcall chkVrijClick(TObject *Sender);
         void __fastcall txtPasChange(TObject *Sender);

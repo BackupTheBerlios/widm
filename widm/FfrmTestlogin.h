@@ -16,11 +16,10 @@ class TfrmTestLogin : public TForm
 {
 __published:	// IDE-managed Components
   TButton *Button1;
-  TButton *Button2;
   TLabel *Label1;
   TEdit *txtName;
-  void __fastcall Button2Click(TObject *Sender);
   void __fastcall Button1Click(TObject *Sender);
+        void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
 private:	// User declarations
   TfrmTestwin *parent;
 public:		// User declarations

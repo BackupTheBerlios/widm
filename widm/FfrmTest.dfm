@@ -1,7 +1,7 @@
 object frmTest: TfrmTest
   Left = 0
   Top = 0
-  Width = 973
+  Width = 990
   Height = 475
   Anchors = [akLeft, akRight]
   TabOrder = 0
@@ -20,28 +20,28 @@ object frmTest: TfrmTest
   end
   object lblVragen: TLabel
     Left = 16
-    Top = 72
+    Top = 184
     Width = 37
     Height = 13
     Caption = 'Vragen:'
   end
   object Label5: TLabel
     Left = 16
-    Top = 48
-    Width = 33
+    Top = 144
+    Width = 65
     Height = 13
     Caption = 'Status:'
   end
   object lblStatus: TLabel
-    Left = 72
-    Top = 48
-    Width = 585
+    Left = 136
+    Top = 144
+    Width = 602
     Height = 13
     Anchors = [akLeft, akTop, akRight]
     AutoSize = False
   end
   object Label1: TLabel
-    Left = 665
+    Left = 682
     Top = 49
     Width = 144
     Height = 13
@@ -50,7 +50,7 @@ object frmTest: TfrmTest
   end
   object chkExecutie: TCheckBox
     Left = 16
-    Top = 24
+    Top = 128
     Width = 145
     Height = 17
     Caption = 'Executie uitgevoerd'
@@ -58,8 +58,8 @@ object frmTest: TfrmTest
   end
   object pnlBelow: TPanel
     Left = 0
-    Top = 100
-    Width = 973
+    Top = 204
+    Width = 990
     Height = 185
     Anchors = [akLeft, akTop, akRight]
     BevelInner = bvRaised
@@ -74,7 +74,7 @@ object frmTest: TfrmTest
       Caption = 'Uitslagen:'
     end
     object Label4: TLabel
-      Left = 829
+      Left = 846
       Top = 48
       Width = 86
       Height = 13
@@ -84,7 +84,7 @@ object frmTest: TfrmTest
     object lstUitslag: TListView
       Left = 16
       Top = 24
-      Width = 806
+      Width = 823
       Height = 150
       Anchors = [akLeft, akTop, akRight]
       Columns = <
@@ -118,7 +118,7 @@ object frmTest: TfrmTest
       OnClick = lstUitslagClick
     end
     object chkVrij: TCheckBox
-      Left = 829
+      Left = 846
       Top = 24
       Width = 139
       Height = 17
@@ -128,7 +128,7 @@ object frmTest: TfrmTest
       OnClick = chkVrijClick
     end
     object txtPas: TEdit
-      Left = 925
+      Left = 942
       Top = 45
       Width = 41
       Height = 21
@@ -137,7 +137,7 @@ object frmTest: TfrmTest
       OnChange = txtPasChange
     end
     object cmdDeletePers: TButton
-      Left = 829
+      Left = 846
       Top = 72
       Width = 137
       Height = 25
@@ -148,7 +148,7 @@ object frmTest: TfrmTest
     end
   end
   object Button1: TButton
-    Left = 781
+    Left = 798
     Top = 20
     Width = 89
     Height = 25
@@ -158,7 +158,7 @@ object frmTest: TfrmTest
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 877
+    Left = 894
     Top = 20
     Width = 89
     Height = 25
@@ -168,7 +168,7 @@ object frmTest: TfrmTest
     OnClick = Button2Click
   end
   object cmdTest: TButton
-    Left = 685
+    Left = 702
     Top = 20
     Width = 89
     Height = 25
@@ -178,7 +178,7 @@ object frmTest: TfrmTest
     OnClick = cmdTestClick
   end
   object txtAantal: TEdit
-    Left = 839
+    Left = 856
     Top = 45
     Width = 33
     Height = 21
@@ -187,7 +187,7 @@ object frmTest: TfrmTest
     Text = '1'
   end
   object cmdPercentage: TButton
-    Left = 876
+    Left = 893
     Top = 44
     Width = 89
     Height = 25
@@ -195,5 +195,13 @@ object frmTest: TfrmTest
     Caption = 'Aantal goed'
     TabOrder = 6
     OnClick = cmdPercentageClick
+  end
+  object GroupBox1: TGroupBox
+    Left = 8
+    Top = 24
+    Width = 185
+    Height = 105
+    Caption = 'Executie-eigenschappen '
+    TabOrder = 7
   end
 end
