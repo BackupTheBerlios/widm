@@ -27,9 +27,10 @@ __published:	// IDE-managed Components
   void __fastcall FormShow(TObject *Sender);
   void __fastcall tmrTimer(TObject *Sender);
         void __fastcall FormActivate(TObject *Sender);
+        void __fastcall FormClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
-  __fastcall TfrmTestwin(TComponent* Owner);
+  __fastcall TfrmTestwin(TComponent* Owner, bool doLogin = true);
   virtual __fastcall ~TfrmTestwin();
 
   void redScreen(bool leave = false);

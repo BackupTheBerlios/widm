@@ -14,6 +14,7 @@ object frmTestwin: TfrmTestwin
   OldCreateOrder = False
   Position = poScreenCenter
   OnActivate = FormActivate
+  OnClick = FormClick
   OnCreate = FormCreate
   OnShow = FormShow
   PixelsPerInch = 96
@@ -363,6 +364,7 @@ object frmTestwin: TfrmTestwin
       00000000000000001FFFD9}
     Stretch = True
     Visible = False
+    OnClick = FormClick
   end
   object imgRed: TImage
     Left = 0
@@ -652,6 +654,7 @@ object frmTestwin: TfrmTestwin
       000000000000000000000000000FFFD9}
     Stretch = True
     Visible = False
+    OnClick = FormClick
   end
   object lblName: TLabel
     Left = 639

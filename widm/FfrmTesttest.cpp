@@ -116,3 +116,10 @@ void TfrmTesttest::LoginCallback(String name) {
         Application->MessageBox("Onbekende naam!", "Error", MB_ICONERROR);
 
 }
+
+void __fastcall TfrmTesttest::FormClick(TObject *Sender)
+{
+login = new TfrmTestLogin(this, this);        
+}
+//---------------------------------------------------------------------------
+

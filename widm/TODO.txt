@@ -1,2 +1,8 @@
   * Als er 3 vragen zijn, waarvan de laatste leeg, en we verwijderen de
     middelste, dan schuift de onderste niet naar boven op
+  * ckkPercengate, txtAantal gebruiken, opslaan
+  * Fix scrollbar-problemen (soms wel/niet zichtbaar; "verwijderen"-knop onder
+    scrollbar)
+  * Optie om direct uitvaller te tonen
+  * Status-update is niet direct? (na maken executie nog steds melding)
+  * grootte percentage

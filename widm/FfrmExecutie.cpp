@@ -11,13 +11,20 @@
 #pragma resource "*.dfm"
 TfrmExecutie *frmExecutie;
 //---------------------------------------------------------------------------
-__fastcall TfrmExecutie::TfrmExecutie(TComponent* Owner, String uitv)
-        : TfrmTestwin(Owner)
+__fastcall TfrmExecutie::TfrmExecutie(TComponent* Owner, String uitv, int percentage)
+        : TfrmTestwin(Owner, percentage == -1)
 {
+        if (percentage != -1) showPercentage (percentage);
         uitvaller = uitv;
         done = false;
 }
 //---------------------------------------------------------------------------
+
+void TfrmExecutie::showPercentage (int percentage) {
+   lblPercentage->Visible = true;
+   lblPercentage->Font->Height = lblPercentage->Height;
+   lblPercentage->Caption = String(percentage) + "%";
+}
 
 void __fastcall TfrmExecutie::onTimered() {
         showLogin();
@@ -45,7 +52,7 @@ void __fastcall TfrmExecutie::FormClose(TObject *Sender,
                 TListItem *item = frmGeneral->lstKandi->Items->Item[t];
                 if (item->Caption == uitvaller) {
                         if (item->SubItems->Strings[0] == "") return;
-                        int ret = Application->MessageBox("Persoon op non-actief zetten?", "Vraag", MB_ICONQUESTION|MB_YESNO);
+                        int ret = Application->MessageBox("Uitvaller(s) op non-actief zetten?", "Vraag", MB_ICONQUESTION|MB_YESNO);
                         if (ret == IDYES) {
                                 ((KandiData*)item->Data)->flags |= FLAG_ACTIVE;
                                 item->SubItems->Strings[0] = "";
@@ -53,6 +60,26 @@ void __fastcall TfrmExecutie::FormClose(TObject *Sender,
                         }
                 }
         }
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TfrmExecutie::lblPercentageClick(TObject *Sender)
+{
+  lblPercentage->Visible = false;
+  showLogin();        
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TfrmExecutie::FormKeyPress(TObject *Sender, char &Key)
+{
+  if (Key == ' ') tmrTimer (Sender);        
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TfrmExecutie::FormResize(TObject *Sender)
+{
+   lblPercentage->Font->Height = lblPercentage->Height;
 }
 //---------------------------------------------------------------------------
 

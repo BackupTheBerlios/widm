@@ -11,10 +11,11 @@
 #pragma resource "*.dfm"
 TfrmTestwin *frmTestwin;
 //---------------------------------------------------------------------------
-__fastcall TfrmTestwin::TfrmTestwin(TComponent* Owner)
+__fastcall TfrmTestwin::TfrmTestwin(TComponent* Owner, bool doLogin)
   : TForm(Owner)
 {
-  login = new TfrmTestLogin(this, this);
+  login = NULL;
+  if (doLogin) login = new TfrmTestLogin(this, this);
 }
 
 __fastcall TfrmTestwin::~TfrmTestwin() {
@@ -91,22 +92,6 @@ void TfrmTestwin::setvraag(String vraag, TStringList *list) {
 
 void __fastcall TfrmTestwin::onButtonClick(TObject *Sender)
 {
-//  TButton *button = (TButton*)Sender;
-//  if (labels[button->Tag]->Caption == "Pas deze vraag") n_pasvragen--;
-//  test->feed(labels[button->Tag]->Caption.c_str());
-//  test->cur++;
-//  if (test->cur >= test->questions->Count) {
-//    TDateTime diff = Time() - begin;
-//    unsigned short hour, min, sec, msec;
-//    DecodeTime(diff, hour, min, sec, msec);
-//    if (name != "Test") test->write(hour * 8600000 + min * 60000 + sec * 1000 + msec);
-//    hidebuttons();
-//    test->cur = 0;
-//    frmLogin->txtName->Text = "";
-//    frmLogin->ShowModal();
-//    return;
-//  }
-//  loadtest();
 }
 //---------------------------------------------------------------------------
 
@@ -128,26 +113,6 @@ void __fastcall TfrmTestwin::FormShow(TObject *Sender)
 //---------------------------------------------------------------------------
 
 void TfrmTestwin::LoginCallback(String naam) {
-//  if (name_set(txtName->Text)) {
-//    if (FileExists(frmTest->file.SubString(1, frmTest->file.Length() - 4) + name_c + ".txt")) {
-//      Application->MessageBox("You already did this test!", "Error", MB_ICONERROR);
-//      return;
-//    }
-//    /* get the number of pass questions */
-//    TIniFile *f = new TIniFile(frmTest->file.SubString(1, strlen(DIR)) + "vrij" + frmTest->file.SubString(strlen(DIR) + 1, frmTest->file.Length() - strlen(DIR)));
-//    frmTest->n_pasvragen = f->ReadInteger("Pasvragen", name, 0);
-//    delete f;
-//  } else if (txtName->Text == "Test") {
-//    name = "Test";
-//    frmTest->n_pasvragen = 0;
-//  } else return;
-
-//  Close();
-//  frmTest->lblName->Caption = name;
-//  frmTest->imgMol->Visible = true;
-//  frmTest->lblQ->Visible = true;
-//  frmTest->lblName->Visible = true;
-//  frmTest->loadtest();
 }
 
 void TfrmTestwin::LoginCloseCallback() {
@@ -189,6 +154,7 @@ void TfrmTestwin::greenScreen() {
 }
 
 void TfrmTestwin::showLogin() {
+    if (!login) login = new TfrmTestLogin(this, this);
     login->txtName->Text = "";
     login->ShowModal();
 }
@@ -198,8 +164,14 @@ void TfrmTestwin::closeLogin() {
 }
 void __fastcall TfrmTestwin::FormActivate(TObject *Sender)
 {
-  showLogin();
+  if (login) showLogin();
 
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TfrmTestwin::FormClick(TObject *Sender)
+{
+  Close();
 }
 //---------------------------------------------------------------------------
 

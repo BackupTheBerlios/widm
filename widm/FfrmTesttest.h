@@ -15,11 +15,13 @@
 class TfrmTesttest : public TfrmTestwin
 {
 __published:	// IDE-managed Components
+        void __fastcall FormClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
   __fastcall TfrmTesttest(TComponent* Owner);
   virtual void __fastcall onButtonClick(TObject *Sender);
   virtual void LoginCallback(String name);
+  
   TfrmTest *test;
   String mol;
   String aws;
@@ -30,6 +32,7 @@ public:		// User declarations
   TDateTime begin;
   int ngoed;
   int pasvragen;
+
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TfrmTesttest *frmTesttest;

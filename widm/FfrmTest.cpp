@@ -237,8 +237,10 @@ void __fastcall TfrmTest::Button2Click(TObject *Sender)
                 Application->MessageBox("Nog niet klaar voor executie!", "Fout", MB_ICONERROR);
                 return;
         }
-        TfrmExecutie *exec = new TfrmExecutie(this, uitv);
+        TfrmExecutie *exec = new TfrmExecutie(this, uitv,
+                                              chkPercentage->Checked ? rightPercentage () : -1);
         exec->ShowModal();
+        // todo: delete exec?
         chkExecutie->Checked = true;
 //        Application->MessageBox(uitvaller().c_str(), "Info", 0);
 }
@@ -302,7 +304,7 @@ void __fastcall TfrmTest::Button1Click(TObject *Sender)
 
         ret = exitorder(namen, uv);
 
-        Application->MessageBox(ret->Text.c_str(), "Executievolgorde", MB_ICONERROR);
+        Application->MessageBox(ret->Text.c_str(), "Executievolgorde", MB_ICONINFORMATION);
         delete ret;
         delete namen;
 }
@@ -378,6 +380,7 @@ void __fastcall TfrmTest::cmdPercentageClick(TObject *Sender)
 {
   if (lstUitslag->Items->Count == 0) {
     Application->MessageBox ("Nog geen uitslagen!", "Fout", MB_ICONERROR);
+    return;
   }
 
   Application->MessageBox ((String ("Percentage goed: ") + rightPercentage()).c_str(), "Info", MB_ICONERROR);

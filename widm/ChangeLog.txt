@@ -4,6 +4,10 @@
  * Added option to set number of people to execute (not functional though)
  * Made Login dialog more like the TV program (i.e., adjusted captions and
    removed cancel button)
+ * Clicking on the execution window now closes it
+ * Entering space when in execution now directly re-opens login dialog
+ * Changed some dialog box icons (e.g. error->information)
+ * Added option to show percentages
 
 2.0b1-berlios
  * Sta niet meer toe dat twee deelnemers dezelfde naam hebben (veroorzaakt

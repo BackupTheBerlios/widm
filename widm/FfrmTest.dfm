@@ -1,8 +1,8 @@
 object frmTest: TfrmTest
   Left = 0
   Top = 0
-  Width = 990
-  Height = 475
+  Width = 1041
+  Height = 485
   Anchors = [akLeft, akRight]
   TabOrder = 0
   object lblTitel: TLabel
@@ -20,52 +20,21 @@ object frmTest: TfrmTest
   end
   object lblVragen: TLabel
     Left = 16
-    Top = 184
+    Top = 144
     Width = 37
     Height = 13
     Caption = 'Vragen:'
   end
-  object Label5: TLabel
-    Left = 16
-    Top = 144
-    Width = 65
-    Height = 13
-    Caption = 'Status:'
-  end
-  object lblStatus: TLabel
-    Left = 136
-    Top = 144
-    Width = 602
-    Height = 13
-    Anchors = [akLeft, akTop, akRight]
-    AutoSize = False
-  end
-  object Label1: TLabel
-    Left = 682
-    Top = 49
-    Width = 144
-    Height = 13
-    Anchors = [akTop, akRight]
-    Caption = 'Aantal mensen te executeren: '
-  end
-  object chkExecutie: TCheckBox
-    Left = 16
-    Top = 128
-    Width = 145
-    Height = 17
-    Caption = 'Executie uitgevoerd'
-    TabOrder = 0
-  end
   object pnlBelow: TPanel
     Left = 0
-    Top = 204
-    Width = 990
+    Top = 172
+    Width = 1035
     Height = 185
     Anchors = [akLeft, akTop, akRight]
     BevelInner = bvRaised
     BevelOuter = bvNone
     Caption = 'pnlBelow'
-    TabOrder = 1
+    TabOrder = 0
     object Label2: TLabel
       Left = 16
       Top = 8
@@ -74,7 +43,7 @@ object frmTest: TfrmTest
       Caption = 'Uitslagen:'
     end
     object Label4: TLabel
-      Left = 846
+      Left = 891
       Top = 48
       Width = 86
       Height = 13
@@ -84,7 +53,7 @@ object frmTest: TfrmTest
     object lstUitslag: TListView
       Left = 16
       Top = 24
-      Width = 823
+      Width = 868
       Height = 150
       Anchors = [akLeft, akTop, akRight]
       Columns = <
@@ -118,7 +87,7 @@ object frmTest: TfrmTest
       OnClick = lstUitslagClick
     end
     object chkVrij: TCheckBox
-      Left = 846
+      Left = 891
       Top = 24
       Width = 139
       Height = 17
@@ -128,7 +97,7 @@ object frmTest: TfrmTest
       OnClick = chkVrijClick
     end
     object txtPas: TEdit
-      Left = 942
+      Left = 987
       Top = 45
       Width = 41
       Height = 21
@@ -137,7 +106,7 @@ object frmTest: TfrmTest
       OnChange = txtPasChange
     end
     object cmdDeletePers: TButton
-      Left = 846
+      Left = 891
       Top = 72
       Width = 137
       Height = 25
@@ -147,61 +116,95 @@ object frmTest: TfrmTest
       OnClick = cmdDeletePersClick
     end
   end
-  object Button1: TButton
-    Left = 798
-    Top = 20
-    Width = 89
-    Height = 25
-    Anchors = [akTop, akRight]
-    Caption = 'Executievolgorde'
-    TabOrder = 2
-    OnClick = Button1Click
-  end
-  object Button2: TButton
-    Left = 894
-    Top = 20
-    Width = 89
-    Height = 25
-    Anchors = [akTop, akRight]
-    Caption = 'Start Executie'
-    TabOrder = 3
-    OnClick = Button2Click
-  end
-  object cmdTest: TButton
-    Left = 702
-    Top = 20
-    Width = 89
-    Height = 25
-    Anchors = [akTop, akRight]
-    Caption = 'Start Test'
-    TabOrder = 4
-    OnClick = cmdTestClick
-  end
-  object txtAantal: TEdit
-    Left = 856
-    Top = 45
-    Width = 33
-    Height = 21
-    Anchors = [akTop, akRight]
-    TabOrder = 5
-    Text = '1'
-  end
-  object cmdPercentage: TButton
-    Left = 893
-    Top = 44
-    Width = 89
-    Height = 25
-    Anchors = [akTop, akRight]
-    Caption = 'Aantal goed'
-    TabOrder = 6
-    OnClick = cmdPercentageClick
-  end
   object GroupBox1: TGroupBox
     Left = 8
     Top = 24
-    Width = 185
-    Height = 105
+    Width = 1027
+    Height = 113
+    Anchors = [akLeft, akTop, akRight]
     Caption = 'Executie-eigenschappen '
-    TabOrder = 7
+    TabOrder = 1
+    object Label5: TLabel
+      Left = 8
+      Top = 36
+      Width = 33
+      Height = 13
+      Caption = 'Status:'
+    end
+    object lblStatus: TLabel
+      Left = 63
+      Top = 36
+      Width = 956
+      Height = 13
+      Anchors = [akLeft, akTop, akRight]
+      AutoSize = False
+    end
+    object Label1: TLabel
+      Left = 9
+      Top = 57
+      Width = 144
+      Height = 13
+      Caption = 'Aantal mensen te executeren: '
+    end
+    object chkExecutie: TCheckBox
+      Left = 8
+      Top = 16
+      Width = 145
+      Height = 17
+      Caption = 'Executie uitgevoerd'
+      TabOrder = 0
+    end
+    object txtAantal: TEdit
+      Left = 168
+      Top = 53
+      Width = 33
+      Height = 21
+      TabOrder = 1
+      Text = '1'
+    end
+    object cmdTest: TButton
+      Left = 104
+      Top = 76
+      Width = 89
+      Height = 25
+      Caption = 'Start Test'
+      TabOrder = 2
+      OnClick = cmdTestClick
+    end
+    object Button1: TButton
+      Left = 200
+      Top = 76
+      Width = 89
+      Height = 25
+      Caption = 'Executievolgorde'
+      TabOrder = 3
+      OnClick = Button1Click
+    end
+    object Button2: TButton
+      Left = 296
+      Top = 76
+      Width = 89
+      Height = 25
+      Caption = 'Start Executie'
+      TabOrder = 4
+      OnClick = Button2Click
+    end
+    object cmdPercentage: TButton
+      Left = 8
+      Top = 76
+      Width = 89
+      Height = 25
+      Caption = 'Aantal goed'
+      TabOrder = 5
+      OnClick = cmdPercentageClick
+    end
+    object chkPercentage: TCheckBox
+      Left = 240
+      Top = 56
+      Width = 169
+      Height = 17
+      Caption = 'Percentage weergeven'
+      TabOrder = 6
+    end
   end
 end

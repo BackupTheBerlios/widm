@@ -19,7 +19,6 @@ class TfrmTest : public TFrame
 {
 __published:	// IDE-managed Components
         TLabel *lblTitel;
-        TCheckBox *chkExecutie;
         TPanel *pnlBelow;
         TLabel *Label2;
         TLabel *lblVragen;
@@ -28,15 +27,17 @@ __published:	// IDE-managed Components
         TLabel *Label4;
         TEdit *txtPas;
         TButton *cmdDeletePers;
-        TButton *Button1;
-        TButton *Button2;
-        TButton *cmdTest;
+        TGroupBox *GroupBox1;
+        TCheckBox *chkExecutie;
         TLabel *Label5;
         TLabel *lblStatus;
         TLabel *Label1;
         TEdit *txtAantal;
+        TButton *cmdTest;
+        TButton *Button1;
+        TButton *Button2;
         TButton *cmdPercentage;
-        TGroupBox *GroupBox1;
+        TCheckBox *chkPercentage;
         void __fastcall lstUitslagClick(TObject *Sender);
         void __fastcall chkVrijClick(TObject *Sender);
         void __fastcall txtPasChange(TObject *Sender);

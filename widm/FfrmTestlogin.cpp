@@ -26,8 +26,6 @@ void __fastcall TfrmTestLogin::FormClose(TObject *Sender,
       TCloseAction &Action)
 {
   Close();
-  parent->LoginCloseCallback();
-
 }
 //---------------------------------------------------------------------------
 

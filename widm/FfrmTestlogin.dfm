@@ -1,8 +1,8 @@
 object frmTestLogin: TfrmTestLogin
-  Left = 245
-  Top = 486
-  BorderIcons = []
-  BorderStyle = bsDialog
+  Left = 489
+  Top = 502
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
   Caption = 'Voer naam in'
   ClientHeight = 154
   ClientWidth = 317
