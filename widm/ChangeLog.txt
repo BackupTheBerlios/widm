@@ -1,0 +1,3 @@
+ * Reparatie voor bug als "mol" als antwoord is ingevuld (werkte niet)
+ * Reparatie voor bug waar uitvaller niet goed werd berekend (bij gelijk aantal
+   goed werd soms degene met de laagste tijd eruit gegooid)

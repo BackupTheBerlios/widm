@@ -250,7 +250,7 @@ unsigned long uitval_value(TListItem *i, String mol) {
         int ival = i->SubItems->Strings[3].SubString(1, i->SubItems->Strings[3].Pos(" ") - 1).ToIntDef(0);
         int itijd = i->SubItems->Strings[5].ToIntDef(0);
 
-        return ival << 24 + (1<<24 - itijd);
+        return (ival << 24) + ((1<<24) - itijd);
 }
 
 

@@ -1,7 +1,7 @@
 object frmTest: TfrmTest
   Left = 0
   Top = 0
-  Width = 905
+  Width = 922
   Height = 475
   Anchors = [akLeft, akRight]
   TabOrder = 0
@@ -35,7 +35,7 @@ object frmTest: TfrmTest
   object lblStatus: TLabel
     Left = 72
     Top = 48
-    Width = 826
+    Width = 843
     Height = 13
     Anchors = [akLeft, akTop, akRight]
     AutoSize = False
@@ -51,7 +51,7 @@ object frmTest: TfrmTest
   object pnlBelow: TPanel
     Left = 0
     Top = 100
-    Width = 905
+    Width = 922
     Height = 185
     Anchors = [akLeft, akTop, akRight]
     BevelInner = bvRaised
@@ -66,7 +66,7 @@ object frmTest: TfrmTest
       Caption = 'Uitslagen:'
     end
     object Label4: TLabel
-      Left = 761
+      Left = 778
       Top = 48
       Width = 86
       Height = 13
@@ -76,7 +76,7 @@ object frmTest: TfrmTest
     object lstUitslag: TListView
       Left = 16
       Top = 24
-      Width = 738
+      Width = 755
       Height = 150
       Anchors = [akLeft, akTop, akRight]
       Columns = <
@@ -109,7 +109,7 @@ object frmTest: TfrmTest
       OnClick = lstUitslagClick
     end
     object chkVrij: TCheckBox
-      Left = 761
+      Left = 778
       Top = 24
       Width = 139
       Height = 17
@@ -119,7 +119,7 @@ object frmTest: TfrmTest
       OnClick = chkVrijClick
     end
     object txtPas: TEdit
-      Left = 857
+      Left = 874
       Top = 45
       Width = 41
       Height = 21
@@ -128,7 +128,7 @@ object frmTest: TfrmTest
       OnChange = txtPasChange
     end
     object cmdDeletePers: TButton
-      Left = 761
+      Left = 778
       Top = 72
       Width = 137
       Height = 25
@@ -139,7 +139,7 @@ object frmTest: TfrmTest
     end
   end
   object Button1: TButton
-    Left = 713
+    Left = 730
     Top = 20
     Width = 89
     Height = 25
@@ -149,7 +149,7 @@ object frmTest: TfrmTest
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 809
+    Left = 826
     Top = 20
     Width = 89
     Height = 25
@@ -159,7 +159,7 @@ object frmTest: TfrmTest
     OnClick = Button2Click
   end
   object cmdTest: TButton
-    Left = 617
+    Left = 634
     Top = 20
     Width = 89
     Height = 25
