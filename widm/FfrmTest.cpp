@@ -243,6 +243,7 @@ void __fastcall TfrmTest::Button2Click(TObject *Sender)
 //        Application->MessageBox(uitvaller().c_str(), "Info", 0);
 }
 
+// geeft waarde terug: hoe lager, hoe eerder eruit
 unsigned long uitval_value(TListItem *i, String mol) {
         if (i->Caption == mol || i->SubItems->Strings[0] == "") return 1<<31;
 

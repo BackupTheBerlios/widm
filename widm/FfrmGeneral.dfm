@@ -1,6 +1,6 @@
 object frmGeneral: TfrmGeneral
-  Left = 201
-  Top = 127
+  Left = 334
+  Top = 315
   Width = 793
   Height = 525
   Caption = 'Wie Is De Mol'

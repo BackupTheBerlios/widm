@@ -4,6 +4,7 @@
  */
 
 #include <vcl.h>
+#define __STDC__
 
 /* --- erf.cpp --- */
 /*
@@ -355,7 +356,7 @@ sb7  = -2.24409524465858183362e+01; /* 0xC03670E2, 0x42712D62 */
 double normal_cdf (double x, double mean, double sd)
 {
   x = (x - mean) / sd;
-  return (0.5 * (1 + erf (x / sqrt(2))));
+  return (0.5 * (1 + Erf (x / sqrt(2))));
 }
 
 TStringList *exitorder(TStringList *namen, String uitvaller) {
@@ -380,9 +381,11 @@ TStringList *exitorder(TStringList *namen, String uitvaller) {
          have_exit = false;
        } else {
          /* pick randomly */
-         if (nonoutnames->Count == 0) randn = 0; else randn = rand() % (nonoutnames->Count);
-         ret->Add(nonoutnames->Strings[randn]);
-         nonoutnames->Delete(randn);
+         if (nonoutnames->Count != 0) {
+           randn = rand() % (nonoutnames->Count);
+           ret->Add(nonoutnames->Strings[randn]);
+           nonoutnames->Delete(randn);
+         } else randn = 0;
        }
        t++;
      }

@@ -50,8 +50,8 @@ void __fastcall TfrmTesttest::onButtonClick(TObject *Sender) {
           for (int t = 0; t < v->answers->Count; t++) {
             TfrmAntwoord *a = (TfrmAntwoord *)v->answers->Items[t];
             if (a->txtVraag->Text == labels[x]->Caption) {
-              if (AnsiPos(String(",") + a->cboNaam->Text + ",", "Mol") != 0 ||
-                  AnsiPos(String(",") + a->cboNaam->Text + ",", "," + mol + ",") != 0)
+              if (AnsiPos(",Mol,", "," + a->cboNaam->Text + ",") != 0 ||
+                  AnsiPos("," + mol + ",", "," + a->cboNaam->Text + ",") != 0)
                 ngoed++;
             }
           }
