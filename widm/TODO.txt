@@ -1,0 +1,2 @@
+  * Als er 3 vragen zijn, waarvan de laatste leeg, en we verwijderen de
+    middelste, dan schuift de onderste niet naar boven op

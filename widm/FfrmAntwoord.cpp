@@ -41,3 +41,12 @@ void TfrmAntwoord::update() {
         for (int t = 0; t < frmGeneral->lstKandi->Items->Count; t++)
                 cboNaam->Items->Add(frmGeneral->lstKandi->Items->Item[t]->Caption);
 }
+
+bool TfrmAntwoord::isGood (String mol) {
+  if (AnsiPos(",Mol,", "," + cboNaam->Text + ",") != 0 ||
+      AnsiPos("," + mol + ",", "," + cboNaam->Text + ",") != 0)
+    return true;
+  else
+    return false;
+}
+

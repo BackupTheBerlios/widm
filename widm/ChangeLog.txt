@@ -1,3 +1,9 @@
+ * Export more interfaces such as isGood, moving them from TfrmTesttest to
+   where they should be (well, arguably), like in TfrmAntwoord
+ * Option to show the number of right questions
+ * Added option to set number of people to execute (not functional though)
+
+2.0b1-berlios
  * Sta niet meer toe dat twee deelnemers dezelfde naam hebben (veroorzaakt
    crashes)
  * Engelse teksten in programma door Nederlandse vervangen (maar ik ben er

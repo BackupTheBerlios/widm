@@ -63,6 +63,7 @@ void __fastcall TfrmGeneral::lstKandiSelectItem(TObject *Sender,
             chkMol->Checked = true;
           else
             chkMol->Checked = false;
+
         }
 
         if (dat->flags & FLAG_ACTIVE)

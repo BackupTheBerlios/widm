@@ -21,6 +21,8 @@ private:	// User declarations
 public:		// User declarations
         __fastcall TfrmAntwoord(TComponent* Owner);
         void update();
+
+        bool isGood (String mol);
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TfrmAntwoord *frmAntwoord;

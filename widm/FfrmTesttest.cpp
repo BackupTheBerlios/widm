@@ -25,38 +25,30 @@ __fastcall TfrmTesttest::TfrmTesttest(TComponent* Owner)
 }
 //---------------------------------------------------------------------------
 
+/* check whether the answer is correct */
+static bool isQuestionRight (String answer, TfrmVraag *v, String mol, KandiData *moldat) {
+  if (answer == "Pas deze vraag") /* pass question */
+    return true;
+
+  if (v->chkSurvey->Checked) { /* survey question: check if answer same as the mole */
+    if (!moldat) return false;
+    if (moldat->list->Values[v->cboVraag->Text] == answer)
+      return true;
+  } else { /* normal question */
+    TfrmAntwoord *a = v->getAnswer (answer);
+    if (a && a->isGood (mol)) return true;
+  }
+
+  return false;
+}
+
 void __fastcall TfrmTesttest::onButtonClick(TObject *Sender) {
   for (int x = 0; x < nitems; x++) {
     if (buttons[x] == Sender) {
-      if (labels[x]->Caption == "Pas deze vraag") {
-        ngoed++;
+      if (labels[x]->Caption == "Pas deze vraag")
         pasvragen--;
-      } else {
-        /* check whether the answer is correct */
-        TfrmVraag *v = (TfrmVraag *)test->questions->Items[cur];
-        if (v->chkSurvey->Checked) {
-          if (!moldat) continue;
-          if (moldat->list->Values[v->cboVraag->Text] == labels[x]->Caption)
-            ngoed++;
-//          for (int t = 0; t < moldat->list->Count; t++) {
-//            if (moldat->list->Names[t] == v->cboVraag->Text) {
-//                Application->MessageBox(moldat->list->Values[t].c_str(), "",0);
-//              if (moldat->list->Values[t] == labels[x]->Caption)
-//                ngoed++;
-//              break;
-//            }
-//          }
-        } else {
-          for (int t = 0; t < v->answers->Count; t++) {
-            TfrmAntwoord *a = (TfrmAntwoord *)v->answers->Items[t];
-            if (a->txtVraag->Text == labels[x]->Caption) {
-              if (AnsiPos(",Mol,", "," + a->cboNaam->Text + ",") != 0 ||
-                  AnsiPos("," + mol + ",", "," + a->cboNaam->Text + ",") != 0)
-                ngoed++;
-            }
-          }
-        }
-      }
+      if (isQuestionRight (labels[x]->Caption, (TfrmVraag *)test->questions->Items[cur], mol, moldat))
+        ngoed++;
       if (aws != "") aws += ",";
       aws += labels[x]->Caption;
     }

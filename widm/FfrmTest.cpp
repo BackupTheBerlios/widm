@@ -243,17 +243,19 @@ void __fastcall TfrmTest::Button2Click(TObject *Sender)
 //        Application->MessageBox(uitvaller().c_str(), "Info", 0);
 }
 
+unsigned long aantalGoed (TListItem *i) {
+  return i->SubItems->Strings[3].SubString(1, i->SubItems->Strings[3].Pos(" ") - 1).ToIntDef(0);
+}
+
 // geeft waarde terug: hoe lager, hoe eerder eruit
 unsigned long uitval_value(TListItem *i, String mol) {
         if (i->Caption == mol || i->SubItems->Strings[0] == "") return 1<<31;
 
-        int ival = i->SubItems->Strings[3].SubString(1, i->SubItems->Strings[3].Pos(" ") - 1).ToIntDef(0);
+        int ival = aantalGoed (i);
         int itijd = i->SubItems->Strings[5].ToIntDef(0);
 
         return (ival << 24) + ((1<<24) - itijd);
 }
-
-
 
 //---------------------------------------------------------------------------
 
@@ -272,7 +274,7 @@ String TfrmTest::uitvaller() {
           if (lstUitslag->Items->Item[t]->Caption == mol ||
               lstUitslag->Items->Item[t]->SubItems->Strings[1] == "vrijstelling")
             continue;
-          if (lstUitslag->Items->Item[t]->SubItems->Strings[2] != "" &&
+          if (lstUitslag->Items->Item[t]->SubItems->Strings[2] != "" &&  // TODO: this makes no sense
               lstUitslag->Items->Item[t]->SubItems->Strings[2] == "") return "";
 
           utmp = uitval_value(lstUitslag->Items->Item[t], mol);
@@ -353,7 +355,32 @@ void TfrmTest::openen(TIniFile *file, String section) {
 
 }
 
+int TfrmTest::rightPercentage () {
+  String mol = frmGeneral->getMol();
+  String uitvaller;
+  int aantalvragen = 0, ngoed = 0;
 
+  for (int t = 0; t < lstUitslag->Items->Count; t++) {
+    if (lstUitslag->Items->Item[t]->Caption == mol ||
+        lstUitslag->Items->Item[t]->SubItems->Strings[1] == "vrijstelling")
+      continue;
 
+    if (lstUitslag->Items->Item[t]->SubItems->Strings[2] == "") continue; /* hasn't made test */
 
+    ngoed += aantalGoed (lstUitslag->Items->Item[t]);
+    aantalvragen += questions->Count - 1;
+  }
+
+  if (aantalvragen == 0) return 100; else return (ngoed * 100) / aantalvragen;
+}
+
+void __fastcall TfrmTest::cmdPercentageClick(TObject *Sender)
+{
+  if (lstUitslag->Items->Count == 0) {
+    Application->MessageBox ("Nog geen uitslagen!", "Fout", MB_ICONERROR);
+  }
+
+  Application->MessageBox ((String ("Percentage goed: ") + rightPercentage()).c_str(), "Info", MB_ICONERROR);
+}
+//---------------------------------------------------------------------------
 

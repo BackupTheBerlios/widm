@@ -13,6 +13,7 @@ USEFORM("FfrmSurvey.cpp", frmSurvey);
 USEFORM("FfrmTesttest.cpp", frmTesttest);
 USEUNIT("exitorder.cpp");
 USEFORM("FfrmExecutie.cpp", frmExecutie);
+USE("TODO.txt", File);
 //---------------------------------------------------------------------------
 WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {

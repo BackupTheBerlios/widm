@@ -9,6 +9,8 @@
 #include <StdCtrls.hpp>
 #include <Forms.hpp>
 #include <inifiles.hpp>
+
+#include "FfrmAntwoord.h"
 //---------------------------------------------------------------------------
 class TfrmVraag : public TFrame
 {
@@ -31,6 +33,8 @@ public:		// User declarations
         void answerDeletedNotification(TComponent* Owner);
         void opslaan(TIniFile *file, String section);
         void openen(TIniFile *file, String section, String vraag);
+
+        TfrmAntwoord *getAnswer (String answer);
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TfrmVraag *frmVraag;

@@ -126,3 +126,11 @@ void TfrmVraag::openen(TIniFile *f, String section, String vraag) {
         delete list;
 }
 
+TfrmAntwoord *TfrmVraag::getAnswer (String answer) {
+    for (int t = 0; t < answers->Count; t++) {
+      TfrmAntwoord *a = (TfrmAntwoord *)answers->Items[t];
+      if (a->txtVraag->Text == answer) return a;
+    }
+
+    return NULL;
+}
