@@ -307,7 +307,7 @@ void __fastcall TfrmGeneral::About1Click(TObject *Sender)
         Application->MessageBox(
                 "Wie Is De Mol 2.0\n\n"
                 "Executiesoftware voor het spelen van Wie Is De Mol.\n"
-                "Copyright (C) Meilof Veeningen, 2004. Voor meer informatie:\n"
+                "Copyright (C) Meilof Veeningen, 2004-2005. Voor meer informatie:\n"
                 "http://home.wanadoo.nl/meilof/, of mail meilof@wanadoo.nl.\n\n"
                 "Dit programma is vrije software verspreid onder de voorwaarden\n"
                 "van de GNU General Public License. Dit houdt onder andere in\n"
@@ -464,7 +464,7 @@ void __fastcall TfrmGeneral::Saveprojectas1Click(TObject *Sender)
 void __fastcall TfrmGeneral::FormClose(TObject *Sender,
       TCloseAction &Action)
 {
-        int ret = Application->MessageBox("Save project?", "Question", MB_ICONQUESTION|MB_YESNOCANCEL);
+        int ret = Application->MessageBox("Project bewaren?", "Vraag", MB_ICONQUESTION|MB_YESNOCANCEL);
         if (ret == IDYES) {
                 if (filename == "") {
                         Saveprojectas1Click(Sender);
@@ -477,4 +477,21 @@ void __fastcall TfrmGeneral::FormClose(TObject *Sender,
         }
 }
 //---------------------------------------------------------------------------
+
+void __fastcall TfrmGeneral::lstKandiEdited(TObject *Sender,
+      TListItem *Item, AnsiString &S)
+{
+     if (S == Item->Caption) return;
+
+     for (int t = 0; t < lstKandi->Items->Count; t++) {
+       if (lstKandi->Items->Item[t]->Caption == S) {
+         Application->MessageBox("Die naam bestaat al!", "Fout!", MB_ICONERROR);
+         S = Item->Caption;
+         return;
+       }
+     }
+}
+//---------------------------------------------------------------------------
+
+
 

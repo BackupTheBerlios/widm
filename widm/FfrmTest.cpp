@@ -356,3 +356,4 @@ void TfrmTest::openen(TIniFile *file, String section) {
 
 
 
+

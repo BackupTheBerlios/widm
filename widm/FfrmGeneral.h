@@ -76,6 +76,8 @@ __published:	// IDE-managed Components
         void __fastcall Saveproject1Click(TObject *Sender);
         void __fastcall Saveprojectas1Click(TObject *Sender);
         void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
+        void __fastcall lstKandiEdited(TObject *Sender, TListItem *Item,
+          AnsiString &S);
 private:	// User declarations
         void __fastcall setmol(TListItem *item, bool ismol);
 public:		// User declarations

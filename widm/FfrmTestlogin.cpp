@@ -27,3 +27,4 @@ void __fastcall TfrmTestLogin::Button1Click(TObject *Sender)
   parent->LoginCallback(txtName->Text);
 }
 //---------------------------------------------------------------------------
+

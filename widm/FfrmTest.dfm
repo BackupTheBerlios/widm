@@ -1,7 +1,7 @@
 object frmTest: TfrmTest
   Left = 0
   Top = 0
-  Width = 922
+  Width = 956
   Height = 475
   Anchors = [akLeft, akRight]
   TabOrder = 0
@@ -35,7 +35,7 @@ object frmTest: TfrmTest
   object lblStatus: TLabel
     Left = 72
     Top = 48
-    Width = 843
+    Width = 877
     Height = 13
     Anchors = [akLeft, akTop, akRight]
     AutoSize = False
@@ -51,7 +51,7 @@ object frmTest: TfrmTest
   object pnlBelow: TPanel
     Left = 0
     Top = 100
-    Width = 922
+    Width = 956
     Height = 185
     Anchors = [akLeft, akTop, akRight]
     BevelInner = bvRaised
@@ -66,7 +66,7 @@ object frmTest: TfrmTest
       Caption = 'Uitslagen:'
     end
     object Label4: TLabel
-      Left = 778
+      Left = 812
       Top = 48
       Width = 86
       Height = 13
@@ -76,7 +76,7 @@ object frmTest: TfrmTest
     object lstUitslag: TListView
       Left = 16
       Top = 24
-      Width = 755
+      Width = 789
       Height = 150
       Anchors = [akLeft, akTop, akRight]
       Columns = <
@@ -104,12 +104,13 @@ object frmTest: TfrmTest
         item
           Caption = 'Tijd'
         end>
+      ReadOnly = True
       TabOrder = 0
       ViewStyle = vsReport
       OnClick = lstUitslagClick
     end
     object chkVrij: TCheckBox
-      Left = 778
+      Left = 812
       Top = 24
       Width = 139
       Height = 17
@@ -119,7 +120,7 @@ object frmTest: TfrmTest
       OnClick = chkVrijClick
     end
     object txtPas: TEdit
-      Left = 874
+      Left = 908
       Top = 45
       Width = 41
       Height = 21
@@ -128,7 +129,7 @@ object frmTest: TfrmTest
       OnChange = txtPasChange
     end
     object cmdDeletePers: TButton
-      Left = 778
+      Left = 812
       Top = 72
       Width = 137
       Height = 25
@@ -139,7 +140,7 @@ object frmTest: TfrmTest
     end
   end
   object Button1: TButton
-    Left = 730
+    Left = 764
     Top = 20
     Width = 89
     Height = 25
@@ -149,7 +150,7 @@ object frmTest: TfrmTest
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 826
+    Left = 860
     Top = 20
     Width = 89
     Height = 25
@@ -159,7 +160,7 @@ object frmTest: TfrmTest
     OnClick = Button2Click
   end
   object cmdTest: TButton
-    Left = 634
+    Left = 668
     Top = 20
     Width = 89
     Height = 25

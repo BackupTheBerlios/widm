@@ -1,6 +1,6 @@
 object frmGeneral: TfrmGeneral
-  Left = 334
-  Top = 315
+  Left = 246
+  Top = 291
   Width = 793
   Height = 525
   Caption = 'Wie Is De Mol'
@@ -114,6 +114,7 @@ object frmGeneral: TfrmGeneral
             SortType = stText
             TabOrder = 0
             ViewStyle = vsReport
+            OnEdited = lstKandiEdited
             OnSelectItem = lstKandiSelectItem
           end
           object chkMol: TCheckBox
@@ -253,9 +254,9 @@ object frmGeneral: TfrmGeneral
     Left = 248
     Top = 8
     object File1: TMenuItem
-      Caption = '&File'
+      Caption = '&Bestand'
       object Newproject1: TMenuItem
-        Caption = 'New project'
+        Caption = 'Nieuw project'
         ShortCut = 16462
       end
       object Openproject1: TMenuItem
@@ -264,26 +265,26 @@ object frmGeneral: TfrmGeneral
         OnClick = Openproject1Click
       end
       object Saveproject1: TMenuItem
-        Caption = 'Save project'
+        Caption = 'Bewaar project'
         ShortCut = 16467
         OnClick = Saveproject1Click
       end
       object Saveprojectas1: TMenuItem
-        Caption = 'Save project as....'
+        Caption = 'Bewaar project als....'
         OnClick = Saveprojectas1Click
       end
       object N1: TMenuItem
         Caption = '-'
       end
       object Exit1: TMenuItem
-        Caption = 'Exit'
+        Caption = 'Afsluiten'
         ShortCut = 16465
       end
     end
     object Help1: TMenuItem
       Caption = '&Help'
       object About1: TMenuItem
-        Caption = '&About...'
+        Caption = '&Over...'
         OnClick = About1Click
       end
     end
